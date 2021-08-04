@@ -1,3 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+.idea/leetcode/editor.xml
+.idea/Leetcode.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/vcs.xml
