@@ -58,7 +58,7 @@ class Solution:
         for idx, num in enumerate(nums):
             difference = target - num
             if difference == num and difference in nums[idx + 1:length]:
-                return [idx, length - list(reversed(nums)).index(difference)]
+                return [idx, nums[idx + 1:length].index(difference) + idx + 1]
             else:
                 if difference in nums[idx + 1:length]:
                     return [idx, nums.index(difference)]
