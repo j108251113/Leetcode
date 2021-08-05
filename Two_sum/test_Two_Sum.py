@@ -23,3 +23,9 @@ class TestSolution(TestCase):
         target = 6
         expect = [0, 1]
         self.assertEqual(expect, self.solution.twoSum(nums, target))
+
+    def test_two_sum_leetcode_testcase(self):
+        nums = [3, 2, 3]
+        target = 6
+        expect = [0, 2]
+        self.assertEqual(expect, self.solution.twoSum(nums, target))
