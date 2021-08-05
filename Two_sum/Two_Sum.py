@@ -57,9 +57,10 @@ class Solution:
 
         for idx, num in enumerate(nums):
             difference = target - num
-            if difference == num and difference in nums[idx + 1:length]:
-                return [idx, nums[idx + 1:length].index(difference) + idx + 1]
+            rest_nums = nums[idx + 1:length]
+            if difference == num and difference in rest_nums:
+                return [idx, rest_nums.index(difference) + idx + 1]
             else:
-                if difference in nums[idx + 1:length]:
+                if difference in rest_nums:
                     return [idx, nums.index(difference)]
 # leetcode submit region end(Prohibit modification and deletion)
