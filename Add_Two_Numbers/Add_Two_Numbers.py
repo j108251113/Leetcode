@@ -47,7 +47,20 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+from typing import List
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        """
+        :type next: ListNode
+        """
+        self.next = next
+        self.val = val
+
+
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        pass
 
 # leetcode submit region end(Prohibit modification and deletion)
