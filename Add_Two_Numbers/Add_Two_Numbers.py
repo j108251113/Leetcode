@@ -47,7 +47,6 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-from typing import List
 
 
 class ListNode:
@@ -60,7 +59,18 @@ class ListNode:
 
 
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        pass
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode, q: int = 0) -> ListNode:
+        node = ListNode()
+        if l1 is not None and l2 is not None:
+            q_, node.val = divmod(l1.val + l2.val, 10)
+            node.val += q
+            node.next = self.addTwoNumbers(l1.next, l2.next, q_)
+        elif l1 is None and l2 is not None:
+            q_, node.val = divmod(q + l2.val, 10)
+            node.next = self.addTwoNumbers(None, l2.next, q_)
+        elif l2 is None and l1 is not None:
+            q_, node.val = divmod(q + l1.val, 10)
+            node.next = self.addTwoNumbers(l1.next, None, q_)
+        return node
 
 # leetcode submit region end(Prohibit modification and deletion)
