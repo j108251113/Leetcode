@@ -71,6 +71,8 @@ class Solution:
         elif l2 is None and l1 is not None:
             q_, node.val = divmod(q + l1.val, 10)
             node.next = self.addTwoNumbers(l1.next, None, q_)
+        elif q > 0:
+            node.val = q
         return node
 
 # leetcode submit region end(Prohibit modification and deletion)
