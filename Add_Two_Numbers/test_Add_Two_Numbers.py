@@ -22,3 +22,19 @@ class Test(TestCase):
         for n in [7, 0, 8]:
             self.assertEqual(n, node.val)
             node = node.next
+
+    def test_solution_example_two(self):
+        l1 = self.makeLinkList([0])
+        l2 = self.makeLinkList([0])
+        node = self.solution.addTwoNumbers(l1, l2)
+        for n in [0]:
+            self.assertEqual(n, node.val)
+            node = node.next
+
+    def test_solution_example_three(self):
+        l1 = self.makeLinkList([9, 9, 9, 9, 9, 9, 9])
+        l2 = self.makeLinkList([9, 9, 9, 9])
+        node = self.solution.addTwoNumbers(l1, l2)
+        for n in [8, 9, 9, 9, 0, 0, 0, 1]:
+            self.assertEqual(n, node.val)
+            node = node.next
