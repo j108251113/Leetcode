@@ -62,8 +62,7 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode, q: int = 0) -> ListNode:
         node = ListNode()
         if l1 is not None and l2 is not None:
-            q_, node.val = divmod(l1.val + l2.val, 10)
-            node.val += q
+            q_, node.val = divmod(l1.val + l2.val + q, 10)
             node.next = self.addTwoNumbers(l1.next, l2.next, q_)
         elif l1 is None and l2 is not None:
             q_, node.val = divmod(q + l2.val, 10)
@@ -73,6 +72,8 @@ class Solution:
             node.next = self.addTwoNumbers(l1.next, None, q_)
         elif q > 0:
             node.val = q
+        else:
+            node = None
         return node
 
 # leetcode submit region end(Prohibit modification and deletion)
