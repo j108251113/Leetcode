@@ -10,3 +10,8 @@ class TestSolution(TestCase):
         s = ''
         expect = 0
         self.assertEqual(expect, self.solution.lengthOfLongestSubstring(s))
+
+    def test_one_character_repeating(self):
+        s = 'bbbbb'
+        expect = 1
+        self.assertEqual(expect, self.solution.lengthOfLongestSubstring(s))
