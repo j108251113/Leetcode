@@ -15,3 +15,15 @@ class TestSolution(TestCase):
         s = 'bbbbb'
         expect = 1
         self.assertEqual(expect, self.solution.lengthOfLongestSubstring(s))
+
+    def test_three_characters(self):
+        str_list = ['aba', 'abb']
+        expect = 2
+        for string in str_list:
+            self.assertEqual(expect, self.solution.lengthOfLongestSubstring(string))
+
+    def test_four_characters(self):
+        str_list = ['abab', 'abca', 'abbb']
+        expect = [2, 3, 2]
+        for idx, string in enumerate(str_list):
+            self.assertEqual(expect[idx], self.solution.lengthOfLongestSubstring(string))

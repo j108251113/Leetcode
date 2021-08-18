@@ -51,7 +51,11 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if len(s) == 0:
             return 0
-        if len(set(s)) == 1:
-            return 1
-
+        set_ = set()
+        for char in s:
+            if char not in set_:
+                set_.add(char)
+            else:
+                continue
+        return len(set_)
 # leetcode submit region end(Prohibit modification and deletion)
