@@ -27,3 +27,9 @@ class TestSolution(TestCase):
         expect = [2, 3, 2]
         for idx, string in enumerate(str_list):
             self.assertEqual(expect[idx], self.solution.lengthOfLongestSubstring(string))
+
+    def test_five_characters(self):
+        str_list = ['ababc', 'abbcd']
+        expect = [3, 3]
+        for idx, string in enumerate(str_list):
+            self.assertEqual(expect[idx], self.solution.lengthOfLongestSubstring(string))
