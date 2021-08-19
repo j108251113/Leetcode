@@ -47,24 +47,20 @@
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
+import collections
+
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        if len(s) == 0:
-            return 0
-        list_list = [[]]
-        for char in s:
-            if char not in list_list[-1]:
-                list_list[-1].append(char)
-            elif last_add != char:
-                new_list = list_list[-1].copy()
-                new_list.reverse()
-                while new_list.pop() != char:
-                    continue
-                new_list.reverse()
-                new_list.append(char)
-                list_list.append(new_list)
+        start_idx = 0
+        max_length = 0
+        for idx, char in enumerate(s):
+            if char not in s[start_idx:idx]:
+                pass
+            elif s[idx - 1] != char:
+                start_idx += s[start_idx:idx].index(char) + 1
             else:
-                list_list.append([char])
-            last_add = char
-        return max(map(len, list_list))
+                start_idx = idx
+            max_length = max(max_length, len(s[start_idx:idx + 1]))
+        return max_length
 # leetcode submit region end(Prohibit modification and deletion)
