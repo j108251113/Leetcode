@@ -51,11 +51,20 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         if len(s) == 0:
             return 0
-        set_list = [set()]
+        list_list = [[]]
         for char in s:
-            if char not in set_list[-1]:
-                set_list[-1].add(char)
+            if char not in list_list[-1]:
+                list_list[-1].append(char)
+            elif last_add != char:
+                new_list = list_list[-1].copy()
+                new_list.reverse()
+                while new_list.pop() != char:
+                    continue
+                new_list.reverse()
+                new_list.append(char)
+                list_list.append(new_list)
             else:
-                set_list.append(set(char))
-        return max(map(len, set_list))
+                list_list.append([char])
+            last_add = char
+        return max(map(len, list_list))
 # leetcode submit region end(Prohibit modification and deletion)
