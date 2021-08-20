@@ -41,7 +41,7 @@ class TestSolution(TestCase):
             self.assertEqual(expect[idx], self.solution.lengthOfLongestSubstring(string))
 
     def test_leetcode_failed_testcase(self):
-        str_list = ['dvdf', 'ckilbkd', "anviaj"]
-        expect = [3, 5, 5]
+        str_list = ['dvdf', 'ckilbkd', "anviaj", 'abba']
+        expect = [3, 5, 5, 2]
         for idx, string in enumerate(str_list):
             self.assertEqual(expect[idx], self.solution.lengthOfLongestSubstring(string))

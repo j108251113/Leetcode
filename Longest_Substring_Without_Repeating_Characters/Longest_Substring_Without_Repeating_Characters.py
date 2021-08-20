@@ -54,11 +54,13 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         start_idx = 0
         max_length = 0
+        hashmap = {}
         for idx, char in enumerate(s):
-            if char not in s[start_idx:idx]:
+            if char not in hashmap:
                 pass
             else:
-                start_idx += s[start_idx:idx].index(char) + 1
-            max_length = max(max_length, len(s[start_idx:idx + 1]))
+                start_idx = max(start_idx, hashmap[char] + 1)
+            hashmap[char] = idx
+            max_length = max(max_length, idx - start_idx + 1)
         return max_length
 # leetcode submit region end(Prohibit modification and deletion)
