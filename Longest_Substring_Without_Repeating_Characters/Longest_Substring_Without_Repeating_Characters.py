@@ -57,10 +57,8 @@ class Solution:
         for idx, char in enumerate(s):
             if char not in s[start_idx:idx]:
                 pass
-            elif s[idx - 1] != char:
-                start_idx += s[start_idx:idx].index(char) + 1
             else:
-                start_idx = idx
+                start_idx += s[start_idx:idx].index(char) + 1
             max_length = max(max_length, len(s[start_idx:idx + 1]))
         return max_length
 # leetcode submit region end(Prohibit modification and deletion)
