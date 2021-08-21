@@ -38,3 +38,14 @@ class TestSolution(TestCase):
         nums2 = [4]
         expect = 3.00000
         self.assertEqual(expect, self.solution.findMedianSortedArrays(nums1, nums2))
+
+    def test_four_digits(self):
+        nums1 = [1, 2]
+        nums2 = [3, 4]
+        expect = 2.50000
+        self.assertEqual(expect, self.solution.findMedianSortedArrays(nums1, nums2))
+
+        nums1 = [2, 3]
+        nums2 = [3, 4]
+        expect = 3.00000
+        self.assertEqual(expect, self.solution.findMedianSortedArrays(nums1, nums2))
