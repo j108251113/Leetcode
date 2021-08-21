@@ -61,5 +61,9 @@ from typing import List
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        return sum(nums1 + nums2) / len(nums1 + nums2)
+        length = len(nums1 + nums2)
+        if length % 2 == 0:
+            return sum(nums1 + nums2) / len(nums1 + nums2)
+        else:
+            return sorted(nums1 + nums2)[int((length - 1) / 2)]
 # leetcode submit region end(Prohibit modification and deletion)
