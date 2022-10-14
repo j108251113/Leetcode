@@ -41,9 +41,7 @@ class Solution:
                     break
                 else:
                     ridx = subStr.rindex(subStr[0])
-                    if len(subStr[:ridx + 1]) > maxLen and \
-                            ridx != 1 and \
-                            subStr[ridx] != subStr[-1]:
+                    if subStr[ridx] != subStr[-1]:
                         subStr = subStr[:ridx + 1]
                     else:
                         subStr = subStr[:-1]
