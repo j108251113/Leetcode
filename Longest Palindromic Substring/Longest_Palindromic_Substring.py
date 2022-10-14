@@ -30,7 +30,7 @@ class Solution:
             return string == string[::-1]
 
         maxLen = 0
-        while len(s) >= maxLen:
+        while len(s) > maxLen:
             subStr = s
             while len(subStr) > maxLen:
                 if subStr[0] == subStr[-1] and isPalindrome(subStr):
@@ -38,9 +38,14 @@ class Solution:
                         longest.append(subStr)
                         maxLen = max(map(len, longest))
                         break
-                    longest.append(subStr)
                     break
                 else:
-                    subStr = subStr[:-1]
+                    ridx = subStr.rindex(subStr[0])
+                    if len(subStr[:ridx + 1]) > maxLen and \
+                            ridx != 1 and \
+                            subStr[ridx] != subStr[-1]:
+                        subStr = subStr[:ridx + 1]
+                    else:
+                        subStr = subStr[:-1]
             s = s[1:]
         return longest[-1]

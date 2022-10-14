@@ -91,6 +91,11 @@ class MyTestCase(unittest.TestCase):
         expect = "xnnx"
         self.assertEqual(expect, self.solution.longestPalindrome(tleStr))
 
+    def test_leetcode_wa(self):
+        s = "babad"
+        expect = "bab"
+        self.assertEqual(expect, self.solution.longestPalindrome(s))
+
 
 if __name__ == '__main__':
     unittest.main()
