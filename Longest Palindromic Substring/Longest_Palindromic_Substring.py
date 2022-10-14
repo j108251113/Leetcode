@@ -32,3 +32,6 @@ class Solution:
 
         if len(s) == 2:
             return s if isPalindrome(s) else s[0]
+
+        if isPalindrome(s):
+            return s
