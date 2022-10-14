@@ -37,6 +37,11 @@ class MyTestCase(unittest.TestCase):
         expect = "bb"
         self.assertEqual(expect, self.solution.longestPalindrome(s))
 
+    def test_four_characters(self):
+        s = "abba"
+        expect = "abba"
+        self.assertEqual(expect, self.solution.longestPalindrome(s))
+
 
 if __name__ == '__main__':
     unittest.main()
