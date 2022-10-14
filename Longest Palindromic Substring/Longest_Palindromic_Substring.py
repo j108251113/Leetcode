@@ -33,7 +33,7 @@ class Solution:
         while len(s) >= maxLen:
             subStr = s
             while len(subStr) > maxLen:
-                if isPalindrome(subStr):
+                if subStr[0] == subStr[-1] and isPalindrome(subStr):
                     if len(subStr) > maxLen:
                         longest.append(subStr)
                         maxLen = max(map(len, longest))
@@ -43,5 +43,4 @@ class Solution:
                 else:
                     subStr = subStr[:-1]
             s = s[1:]
-        lenlist = list(map(len, longest))
-        return longest[lenlist.index(max(lenlist))]
+        return longest[-1]
