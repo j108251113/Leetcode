@@ -24,4 +24,5 @@
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        return None
+        if len(s) == 1:
+            return s
