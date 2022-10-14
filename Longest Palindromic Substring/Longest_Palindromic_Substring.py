@@ -33,10 +33,11 @@ class Solution:
         while len(s) > maxLen:
             subStr = s
             while len(subStr) > maxLen:
+                strlen = len(subStr)
                 if subStr[0] == subStr[-1] and isPalindrome(subStr):
-                    if len(subStr) > maxLen:
+                    if strlen > maxLen:
                         longest.append(subStr)
-                        maxLen = max(map(len, longest))
+                        maxLen = strlen
                         break
                     break
                 else:
