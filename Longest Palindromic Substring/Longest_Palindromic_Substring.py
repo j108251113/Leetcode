@@ -26,3 +26,9 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
         if len(s) == 1:
             return s
+
+        def isPalindrome(string: str):
+            return string == string[::-1]
+
+        if len(s) == 2:
+            return s if isPalindrome(s) else s[0]
