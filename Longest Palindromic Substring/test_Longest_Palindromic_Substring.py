@@ -62,9 +62,18 @@ class MyTestCase(unittest.TestCase):
         expect = "bb"
         self.assertEqual(expect, self.solution.longestPalindrome(s))
 
+        s = "abbc"
+        expect = "bb"
+        self.assertEqual(expect, self.solution.longestPalindrome(s))
+
         s = "abcd"
         expect = "a"
         self.assertEqual(expect, self.solution.longestPalindrome(s))
+
+        # 20 / 140 test cases passed. Status: Time Limit Exceeded.
+        tleStr = "abbcccbbbcaaccbababcbcabca"
+        expect = "bbcccbb"
+        self.assertEqual(expect, self.solution.longestPalindrome(tleStr))
 
 
 if __name__ == '__main__':

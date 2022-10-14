@@ -24,22 +24,21 @@
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        if len(s) == 1:
-            return s
+
+        longest = []
 
         def isPalindrome(string: str):
             return string == string[::-1]
 
-        if len(s) == 2:
-            return s if isPalindrome(s) else s[0]
-
-        if isPalindrome(s):
-            return s
-        else:
-            longest = [self.longestPalindrome(s[:-1]), self.longestPalindrome(s[1:])]
-            if len(longest[0]) > len(longest[1]):
-                return longest[0]
-            elif len(longest[0]) < len(longest[1]):
-                return longest[1]
-            else:
-                return longest[0]
+        while len(s) >= 1:
+            subStr = s
+            while len(subStr) >= 1:
+                if isPalindrome(subStr):
+                    longest.append(subStr)
+                    break
+                else:
+                    subStr = subStr[:-1]
+            s = s[1:]
+        if len(longest) >= 1:
+            lenlist = list(map(len, longest))
+            return longest[lenlist.index(max(lenlist))]
