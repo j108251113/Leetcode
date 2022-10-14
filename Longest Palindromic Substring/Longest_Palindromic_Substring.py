@@ -36,4 +36,10 @@ class Solution:
         if isPalindrome(s):
             return s
         else:
-            return self.longestPalindrome(s[:-1])
+            longest = [self.longestPalindrome(s[:-1]), self.longestPalindrome(s[1:])]
+            if len(longest[0]) > len(longest[1]):
+                return longest[0]
+            elif len(longest[0]) < len(longest[1]):
+                return longest[1]
+            else:
+                return longest[0]
