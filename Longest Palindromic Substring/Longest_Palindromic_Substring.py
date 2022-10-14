@@ -35,3 +35,5 @@ class Solution:
 
         if isPalindrome(s):
             return s
+        else:
+            return self.longestPalindrome(s[:-1])
